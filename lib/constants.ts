@@ -337,4 +337,3 @@ export const WATCHLIST_TABLE_HEADER = [
     'Alert',
     'Action',
 ];
-''
