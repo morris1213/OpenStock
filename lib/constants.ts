@@ -1,4 +1,4 @@
-export const NAV_ITEMS = [
+'''export const NAV_ITEMS = [
     { href: '/', label: 'Dashboard' },
     { href: '/search', label: 'Search' },
     // { href: '/watchlist', label: 'Watchlist' },
@@ -184,7 +184,7 @@ export const CANDLE_CHART_WIDGET_CONFIG = (symbol: string) => ({
     calendar: false,
     details: true,
     hide_side_toolbar: true,
-    hide_top_toolbar: false,
+    hide_top_toolbar: true,
     hide_legend: false,
     hide_volume: false,
     hotlist: false,
@@ -210,7 +210,7 @@ export const BASELINE_WIDGET_CONFIG = (symbol: string) => ({
     calendar: false,
     details: false,
     hide_side_toolbar: true,
-    hide_top_toolbar: false,
+    hide_top_toolbar: true,
     hide_legend: false,
     hide_volume: false,
     hotlist: false,
@@ -337,3 +337,4 @@ export const WATCHLIST_TABLE_HEADER = [
     'Alert',
     'Action',
 ];
+''
