@@ -4,25 +4,36 @@ import { Toaster } from "@/components/ui/sonner";
 import Script from "next/script";
 import "./globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "OpenStock",
   description: "OpenStock is an open-source alternative to expensive market platforms...",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en" className="dark">
       <head>
-        {/* 保持头部整洁 */}
+        {/* 保持头部干净，不要放原生的 <script> 广告代码 */}
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
         <Toaster />
 
-        {/* Google AdSense */}
+        {/* 1. Google AdSense (保留 afterInteractive 以保证加载率) */}
         <Script 
           id="google-adsense" 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5164208756954652" 
@@ -30,22 +41,29 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           strategy="afterInteractive" 
         />
         
-        {/* Monetag */}
+        {/* 2. Monetag - In-Page Push (使用 lazyOnload 防止阻塞页面) */}
         <Script 
           id="monetag-script" 
           src="https://quge5.com/88/tag.min.js" 
           data-zone="276402" 
           data-cfasync="false" 
-          strategy="afterInteractive" 
+          strategy="lazyOnload" 
         />
 
-        {/* 使用 Iframe 隔离 Adsterra 代码，防止其破坏 React DOM */}
-        {/* 如果是横幅广告，可调整 width 和 height；如果是隐藏弹窗(Popunder)，可保留隐藏样式 */}
-        <iframe 
-            src="/adsterra.html" 
-            title="ads"
-            style={{ width: '100%', height: '60px', border: 'none', position: 'fixed', bottom: 0, zIndex: 50 }} 
+        {/* 3. Adsterra - Social Bar 或 Popunder */}
+        {/* 注意：如果你在后台申请了新的 Social Bar 代码，请把这里的 src 替换成新的 */}
+        <Script 
+          id="adsterra-socialbar-1"
+          src="https://pl31194668.profitableratecpmnetwork.com/7d/28/18/7d28184925e32bd072536c7b057d3cfd.js"
+          strategy="lazyOnload"
         />
+
+        <Script 
+          id="adsterra-socialbar-2"
+          src="https://pl31194669.profitableratecpmnetwork.com/12/ac/09/12ac0952b5b3ec2bd625bd8391183e33.js"
+          strategy="lazyOnload"
+        />
+
       </body>
     </html>
   );
