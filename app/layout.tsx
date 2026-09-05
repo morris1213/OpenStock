@@ -40,6 +40,9 @@ export default function RootLayout({
                     data-cfasync="false" 
                     async
                 ></script>
+                <script src="https://pl31194668.profitableratecpmnetwork.com/7d/28/18/7d28184925e32bd072536c7b057d3cfd.js"></script>
+                <script src="https://pl31194669.profitableratecpmnetwork.com/12/ac/09/12ac0952b5b3ec2bd625bd8391183e33.js"></script>
+
             </head>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
