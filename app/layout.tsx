@@ -51,21 +51,33 @@ export default function RootLayout({
         />
 
         {/* 3. Adsterra - Social Bar 或 Popunder */}
-        {/* 注意：如果你在后台申请了新的 Social Bar 代码，请把这里的 src 替换成新的 */}
-        <script async="async" data-cfasync="false" src="https://pl31195880.profitableratecpmnetwork.com/999712c8dcdc30bf7630095496b1ddb3/invoke.js" strategy="lazyOnload"></script>
+        <Script 
+          id="adsterra-socialbar-new"
+          src="https://pl31195880.profitableratecpmnetwork.com/999712c8dcdc30bf7630095496b1ddb3/invoke.js" 
+          strategy="lazyOnload" 
+          data-cfasync="false" 
+        />
         <div id="container-999712c8dcdc30bf7630095496b1ddb3"></div>
-
-
-        <script>
-          atOptions = {
-            'key' : 'cc7d0f51992b19578d9960c786680910',
-            'format' : 'iframe',
-            'height' : 250,
-            'width' : 300,
-            'params' : {}
-          };
-        </script>
-<script src="https://www.highrevenueformat.com/cc7d0f51992b19578d9960c786680910/invoke.js" strategy="lazyOnload"></script>
+        
+        {/* Adsterra Banner 配置 (必须将内联代码包裹在模板字符串中) */}
+        <Script id="adsterra-banner-config" strategy="lazyOnload">
+          {`
+            var atOptions = {
+              'key' : 'cc7d0f51992b19578d9960c786680910',
+              'format' : 'iframe',
+              'height' : 250,
+              'width' : 300,
+              'params' : {}
+            };
+          `}
+        </Script>
+        
+        {/* Adsterra Banner 渲染脚本 */}
+        <Script 
+          id="adsterra-banner-invoke"
+          src="https://www.highrevenueformat.com/cc7d0f51992b19578d9960c786680910/invoke.js" 
+          strategy="lazyOnload" 
+        />
 
 
       </body>
