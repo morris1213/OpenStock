@@ -52,17 +52,21 @@ export default function RootLayout({
 
         {/* 3. Adsterra - Social Bar 或 Popunder */}
         {/* 注意：如果你在后台申请了新的 Social Bar 代码，请把这里的 src 替换成新的 */}
-        <Script 
-          id="adsterra-socialbar-1"
-          src="https://pl31194668.profitableratecpmnetwork.com/7d/28/18/7d28184925e32bd072536c7b057d3cfd.js"
-          strategy="lazyOnload"
-        />
+        <script async="async" data-cfasync="false" src="https://pl31195880.profitableratecpmnetwork.com/999712c8dcdc30bf7630095496b1ddb3/invoke.js" strategy="lazyOnload"></script>
+        <div id="container-999712c8dcdc30bf7630095496b1ddb3"></div>
 
-        <Script 
-          id="adsterra-socialbar-2"
-          src="https://pl31194669.profitableratecpmnetwork.com/12/ac/09/12ac0952b5b3ec2bd625bd8391183e33.js"
-          strategy="lazyOnload"
-        />
+
+        <script>
+          atOptions = {
+            'key' : 'cc7d0f51992b19578d9960c786680910',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+          };
+        </script>
+<script src="https://www.highrevenueformat.com/cc7d0f51992b19578d9960c786680910/invoke.js" strategy="lazyOnload"></script>
+
 
       </body>
     </html>
